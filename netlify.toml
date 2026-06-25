@@ -1,0 +1,26 @@
+# netlify.toml
+# Ovai — Netlify deployment configuration
+
+[build]
+  # Where your HTML file lives
+  publish = "public"
+  # Where Netlify looks for serverless functions
+  functions = "netlify/functions"
+
+[functions]
+  # Node.js runtime for the convert function
+  node_bundler = "esbuild"
+
+# Redirect all API calls from the browser to the function
+[[redirects]]
+  from   = "/api/convert"
+  to     = "/.netlify/functions/convert"
+  status = 200
+
+# Security headers
+[[headers]]
+  for = "/*"
+  [headers.values]
+    X-Frame-Options        = "DENY"
+    X-Content-Type-Options = "nosniff"
+    Referrer-Policy        = "strict-origin-when-cross-origin"

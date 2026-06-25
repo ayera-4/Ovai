@@ -1,0 +1,18 @@
+{
+  "name": "ovai-converter",
+  "version": "1.0.0",
+  "description": "Ovai — Equation to LaTeX converter powered by Claude AI",
+  "private": true,
+  "engines": {
+    "node": ">=18"
+  },
+  "scripts": {
+    "dev": "netlify dev"
+  },
+  "dependencies": {
+    "node-fetch": "^3.3.2"
+  },
+  "devDependencies": {
+    "netlify-cli": "^17.0.0"
+  }
+}
