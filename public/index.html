@@ -827,7 +827,7 @@ async function extractText(file){
   // docx — use mammoth
   await loadScript(MAMMOTH_CDN);
   const ab = await file.arrayBuffer();
-  const result = await mammoth.extractRawValue({arrayBuffer: ab});
+  const result = await mammoth.extractRawText({arrayBuffer: ab});
   return result.value;
 }
 
